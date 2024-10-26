@@ -185,18 +185,22 @@ print('Exercise 8:', product(-1, 4))
 # Define the function and then call it below.
 
 def basicCalculator(num_1, num_2, oper):
+    
     if oper == 'add':
-        total = num_1 + num_2
-    if oper == 'subtract':
-        total = num_1 - num_2
-    if oper == 'multiply':
-        total = num_1 * num_2
-    if oper == 'divide':
-        total = num_1 / num_2
+        return num_1 + num_2
+    elif oper == 'subtract':
+        return num_1 - num_2
+    elif oper == 'multiply':
+        return num_1 * num_2
+    elif oper == 'divide':
+        if num_2 == 0:
+            return'Cannot divide by 0'
+        return num_1 / num_2
+    else:
+        return 'Error, invald operation, use add, sutract, multipy or divide'
 
-    return total
 
-print('Exercise 9 Result:', basicCalculator(10, 5, "subtract"))
-print('Exercise 9 Result:', basicCalculator(10, 5, "divide"))
+print('Exercise 9 Result:', basicCalculator(10, 5, "subtact"))
+print('Exercise 9 Result:', basicCalculator(10, 0, "divide"))
 print('Exercise 9 Result:', basicCalculator(10, 5, "add"))
 print('Exercise 9 Result:', basicCalculator(10, 5, "multiply"))
